@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+   
+        
+        body{ text-align: center;}
+#chart_div{width: 800px; margin: 0 center; text-align: center;}
+         
+    .formfield* {
+        margin-left:100;
+       vertical-align: right;
+}
+        /* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 2px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 10px;
+}
+        .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: darkgoldenrod;
+   color: white;
+   text-align: center;
+}
+        </style>
+    </head>
+    
+<body background="b.jpg" align="right">
+ 
+   <div class="header">
+       <b>
+       <h1>My Learning</h1></b>
+      <i> <h2>The capacity to learn is a gift,the ability to learn is a skill,and the willingness to learn is a choice.</h2></i>
+    
+</div> 
+<div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Python', 5],
+  ['C++', 8],
+  ['HTML', 3],
+  ['CSS', 2],
+  ['Tkinter', 4],
+    ['Javascript',3],
+      ['C',8]
+]);
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Skills Ratings', 'width':800, 'height':450 };
+
+    
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+<div class="footer">
+ <p><i>You can see my projects @my github account,and the link is provided on the home page.</i></p> 
+</div>
+</body>
+</html>
